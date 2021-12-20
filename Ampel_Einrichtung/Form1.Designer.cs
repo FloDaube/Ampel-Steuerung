@@ -29,6 +29,7 @@ namespace Ampel_Einrichtung
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label_State = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@ namespace Ampel_Einrichtung
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.timer_Read = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -316,6 +318,10 @@ namespace Ampel_Einrichtung
             this.label3.TabIndex = 0;
             this.label3.Text = "Rot Grün Dauer";
             // 
+            // timer_Read
+            // 
+            this.timer_Read.Tick += new System.EventHandler(this.timer_Read_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +372,7 @@ namespace Ampel_Einrichtung
         private System.Windows.Forms.Button button_SendSettings;
         private System.Windows.Forms.Label label_UploadSettings;
         private System.Windows.Forms.CheckBox checkBox_AutoScroll;
+        private System.Windows.Forms.Timer timer_Read;
     }
 }
 

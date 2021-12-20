@@ -22,6 +22,7 @@ namespace Ampel_Einrichtung
             ports = SerialPort.GetPortNames();
             comboBox_Ports.Items.AddRange(ports);
             label_UploadSettings.Text = "";
+            timer_Read.Enabled = true;
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
 
@@ -43,8 +44,9 @@ namespace Ampel_Einrichtung
         {
             if (port.IsOpen)
             {
-                port.Close();
                 button_Connect.Text = "Verbinden";
+                SendData("Connection", "Disconnect");
+                port.Close();
             }
             else
             {
@@ -54,7 +56,8 @@ namespace Ampel_Einrichtung
                 {
                     SendData("Connection","Connect");
                     string confirmation = ReadData();
-                    //string confirmation = "Confirmation";
+                    // Debug Hilfe
+                    confirmation = "Confirmation";
                     if(confirmation == "Confirmation")
                     {
                         button_Connect.Text = "Trennen";
@@ -65,6 +68,7 @@ namespace Ampel_Einrichtung
                     {
                         label_State.Text = "Ampel Steuerung reagiert nicht";
                         port.Close();
+                        SendData("Connection", "Error");
                         label_State.Text = "Keine verbindung";
                         groupBox_Settings.Enabled = false;
                     }
@@ -75,8 +79,16 @@ namespace Ampel_Einrichtung
         private void SendData(string Key, string Value)
         {
             string stringOut = StartCenterEndCode[0] + Key + StartCenterEndCode[1] + Value + StartCenterEndCode[2];
+            if (port.IsOpen)
+            {
+                port.Write(stringOut);
+            }
+            var charsToRemove = new string[] { "#"};
+            foreach (var c in charsToRemove)
+            {
+                stringOut = stringOut.Replace(c, string.Empty);
+            }
             richTextBox_SerialMonitor.Text += "PC >>> " + stringOut;
-            port.Write(stringOut);
         }
 
         private string ReadData()
@@ -85,6 +97,78 @@ namespace Ampel_Einrichtung
             if(serialIn != String.Empty)
             {
                 richTextBox_SerialMonitor.Text += "Ampel >>> " + serialIn;
+                if (serialIn.Equals("Ampel_1"))
+                {
+                    if (serialIn.Equals("Red"))
+                    {
+                        if (serialIn.Equals("&0"))
+                        {
+
+                        }
+                        else if (serialIn.Equals("&1"))
+                        {
+
+                        }
+                    }
+                    else if (serialIn.Equals("Yellow"))
+                    {
+                        if (serialIn.Equals("&0"))
+                        {
+
+                        }
+                        else if (serialIn.Equals("&1"))
+                        {
+
+                        }
+                    }
+                    else if (serialIn.Equals("Green"))
+                    {
+                        if (serialIn.Equals("&0"))
+                        {
+
+                        }
+                        else if (serialIn.Equals("&1"))
+                        {
+
+                        }
+                    }
+                }
+                else if (serialIn.Equals("Ampel_2"))
+                {
+                    if (serialIn.Equals("Red"))
+                    {
+                        if (serialIn.Equals("&0"))
+                        {
+
+                        }
+                        else if (serialIn.Equals("&1"))
+                        {
+
+                        }
+                    }
+                    else if (serialIn.Equals("Yellow"))
+                    {
+                        if (serialIn.Equals("&0"))
+                        {
+
+                        }
+                        else if (serialIn.Equals("&1"))
+                        {
+
+                        }
+                    }
+                    else if (serialIn.Equals("Green"))
+                    {
+                        if (serialIn.Equals("&0"))
+                        {
+
+                        }
+                        else if (serialIn.Equals("&1"))
+                        {
+
+                        }
+                    }
+                }
             }            
             return serialIn;
         }
@@ -109,6 +193,14 @@ namespace Ampel_Einrichtung
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             port.Close();
+        }
+
+        private void timer_Read_Tick(object sender, EventArgs e)
+        {
+            if(port.IsOpen == true)
+            {
+                ReadData();
+            }
         }
     }
 }

@@ -8,3 +8,13 @@ D:\_Entwicklung\Quellcode\Ampel_Einrichtung\Ampel_Einrichtung\obj\Debug\Ampel_Ei
 D:\_Entwicklung\Quellcode\Ampel_Einrichtung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.csproj.CoreCompileInputs.cache
 D:\_Entwicklung\Quellcode\Ampel_Einrichtung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.exe
 D:\_Entwicklung\Quellcode\Ampel_Einrichtung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.pdb
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\bin\Debug\Ampel_Einrichtung.exe.config
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\bin\Debug\Ampel_Einrichtung.exe
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\bin\Debug\Ampel_Einrichtung.pdb
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.csproj.AssemblyReference.cache
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.Form1.resources
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.Properties.Resources.resources
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.csproj.GenerateResource.cache
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.csproj.CoreCompileInputs.cache
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.exe
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Debug\Ampel_Einrichtung.pdb
