@@ -1,0 +1,10 @@
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\bin\Release\Ampel_Einrichtung.exe.config
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\bin\Release\Ampel_Einrichtung.exe
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\bin\Release\Ampel_Einrichtung.pdb
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Release\Ampel_Einrichtung.csproj.AssemblyReference.cache
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Release\Ampel_Einrichtung.Form1.resources
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Release\Ampel_Einrichtung.Properties.Resources.resources
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Release\Ampel_Einrichtung.csproj.GenerateResource.cache
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Release\Ampel_Einrichtung.csproj.CoreCompileInputs.cache
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Release\Ampel_Einrichtung.exe
+D:\_Entwicklung\Quellcode\Ampel-Steuerung\Ampel_Einrichtung\obj\Release\Ampel_Einrichtung.pdb
