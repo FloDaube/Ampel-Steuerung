@@ -16,6 +16,11 @@ namespace Ampel_Einrichtung
         string[] ports;
         SerialPort port = new SerialPort();
         string[] StartCenterEndCode = new string[3] {"#","&","\n" };
+        Ampel Ampel_1 = new Ampel();
+        Ampel Ampel_1_old = new Ampel();
+        Ampel Ampel_2 = new Ampel();
+        Ampel Ampel_2_old = new Ampel();
+
         public Form1()
         {
             InitializeComponent();
@@ -44,9 +49,13 @@ namespace Ampel_Einrichtung
         {
             if (port.IsOpen)
             {
+                Ampel_1.Set_State(false, false, false);
+                Ampel_2.Set_State(false, false, false);
                 button_Connect.Text = "Verbinden";
                 SendData("Connection", "Disconnect");
+                label_State.Text = "Keine verbindung";
                 port.Close();
+                groupBox_Settings.Enabled = false;
             }
             else
             {
@@ -71,6 +80,8 @@ namespace Ampel_Einrichtung
                         SendData("Connection", "Error");
                         label_State.Text = "Keine verbindung";
                         groupBox_Settings.Enabled = false;
+                        Ampel_1.Set_State(false, false, false);
+                        Ampel_2.Set_State(false, false, false);
                     }
                 }
             }
@@ -103,33 +114,33 @@ namespace Ampel_Einrichtung
                     {
                         if (serialIn.Equals("&0"))
                         {
-
+                            Ampel_1.Set_State_Red(false);
                         }
                         else if (serialIn.Equals("&1"))
                         {
-
+                            Ampel_1.Set_State_Red(true);
                         }
                     }
                     else if (serialIn.Equals("Yellow"))
                     {
                         if (serialIn.Equals("&0"))
                         {
-
+                            Ampel_1.Set_State_Yellow(false);
                         }
                         else if (serialIn.Equals("&1"))
                         {
-
+                            Ampel_1.Set_State_Yellow(true);
                         }
                     }
                     else if (serialIn.Equals("Green"))
                     {
                         if (serialIn.Equals("&0"))
                         {
-
+                            Ampel_1.Set_State_Green(false);
                         }
                         else if (serialIn.Equals("&1"))
                         {
-
+                            Ampel_1.Set_State_Green(true);
                         }
                     }
                 }
@@ -200,6 +211,48 @@ namespace Ampel_Einrichtung
             if(port.IsOpen == true)
             {
                 ReadData();
+
+
+                
+            }
+
+            object s = new object();
+            Graphics g = panel_Ampel_1.CreateGraphics();
+            Rectangle rec = new Rectangle();
+            PaintEventArgs pea = new PaintEventArgs(g, rec);
+            if (Ampel_1.State != Ampel_1_old.State)
+            {
+                panel_Ampel_1_Paint(s, pea);
+                Ampel_1_old.State = Ampel_1.State;
+            }
+            if (Ampel_2.State != Ampel_2_old.State)
+            {
+                panel_Ampel_2_Paint(s, pea);
+                Ampel_2_old.State = Ampel_2.State;
+            }
+        }
+
+        private void panel_Ampel_1_Paint(object sender, PaintEventArgs e)
+        {
+            Ampel_1.Draw(ref panel_Ampel_1);
+        }
+
+        private void panel_Ampel_2_Paint(object sender, PaintEventArgs e)
+        {
+            Ampel_2.Draw(ref panel_Ampel_2);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (port.IsOpen == true)
+            {
+                Ampel_1.Set_State(true, true, true);
+                Ampel_2.Set_State(true, true, true);
+            }
+            else
+            {
+                Ampel_1.Set_State(false, false, false);
+                Ampel_2.Set_State(false, false, false);
             }
         }
     }

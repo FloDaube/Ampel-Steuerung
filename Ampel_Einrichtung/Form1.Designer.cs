@@ -39,9 +39,9 @@ namespace Ampel_Einrichtung
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkBox_AutoScroll = new System.Windows.Forms.CheckBox();
             this.richTextBox_SerialMonitor = new System.Windows.Forms.RichTextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_Ampel1 = new System.Windows.Forms.Panel();
+            this.groupBox_Graphics = new System.Windows.Forms.GroupBox();
+            this.panel_Ampel_2 = new System.Windows.Forms.Panel();
+            this.panel_Ampel_1 = new System.Windows.Forms.Panel();
             this.groupBox_Settings = new System.Windows.Forms.GroupBox();
             this.label_UploadSettings = new System.Windows.Forms.Label();
             this.button_SendSettings = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@ namespace Ampel_Einrichtung
             this.timer_Read = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupBox_Graphics.SuspendLayout();
             this.groupBox_Settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_RR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Y)).BeginInit();
@@ -158,35 +158,33 @@ namespace Ampel_Einrichtung
             this.richTextBox_SerialMonitor.Text = "";
             this.richTextBox_SerialMonitor.TextChanged += new System.EventHandler(this.richTextBox_SerialMonitor_TextChanged);
             // 
-            // groupBox3
+            // groupBox_Graphics
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.panel1);
-            this.groupBox3.Controls.Add(this.panel_Ampel1);
-            this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(256, 12);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(222, 202);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
-            this.groupBox3.Visible = false;
+            this.groupBox_Graphics.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_Graphics.Controls.Add(this.panel_Ampel_2);
+            this.groupBox_Graphics.Controls.Add(this.panel_Ampel_1);
+            this.groupBox_Graphics.Location = new System.Drawing.Point(256, 12);
+            this.groupBox_Graphics.Name = "groupBox_Graphics";
+            this.groupBox_Graphics.Size = new System.Drawing.Size(222, 202);
+            this.groupBox_Graphics.TabIndex = 2;
+            this.groupBox_Graphics.TabStop = false;
+            this.groupBox_Graphics.Text = "Anzeige";
             // 
-            // panel1
+            // panel_Ampel_2
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(113, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(101, 172);
-            this.panel1.TabIndex = 1;
+            this.panel_Ampel_2.Location = new System.Drawing.Point(113, 22);
+            this.panel_Ampel_2.Name = "panel_Ampel_2";
+            this.panel_Ampel_2.Size = new System.Drawing.Size(100, 170);
+            this.panel_Ampel_2.TabIndex = 1;
+            this.panel_Ampel_2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Ampel_2_Paint);
             // 
-            // panel_Ampel1
+            // panel_Ampel_1
             // 
-            this.panel_Ampel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel_Ampel1.Location = new System.Drawing.Point(6, 22);
-            this.panel_Ampel1.Name = "panel_Ampel1";
-            this.panel_Ampel1.Size = new System.Drawing.Size(101, 172);
-            this.panel_Ampel1.TabIndex = 0;
+            this.panel_Ampel_1.Location = new System.Drawing.Point(6, 22);
+            this.panel_Ampel_1.Name = "panel_Ampel_1";
+            this.panel_Ampel_1.Size = new System.Drawing.Size(100, 170);
+            this.panel_Ampel_1.TabIndex = 0;
+            this.panel_Ampel_1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Ampel_1_Paint);
             // 
             // groupBox_Settings
             // 
@@ -328,7 +326,7 @@ namespace Ampel_Einrichtung
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 406);
             this.Controls.Add(this.groupBox_Settings);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox_Graphics);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -339,7 +337,7 @@ namespace Ampel_Einrichtung
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
+            this.groupBox_Graphics.ResumeLayout(false);
             this.groupBox_Settings.ResumeLayout(false);
             this.groupBox_Settings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_RR)).EndInit();
@@ -359,9 +357,9 @@ namespace Ampel_Einrichtung
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox richTextBox_SerialMonitor;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Panel panel_Ampel1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox_Graphics;
+        private System.Windows.Forms.Panel panel_Ampel_1;
+        private System.Windows.Forms.Panel panel_Ampel_2;
         private System.Windows.Forms.GroupBox groupBox_Settings;
         private System.Windows.Forms.NumericUpDown numericUpDown_RR;
         private System.Windows.Forms.NumericUpDown numericUpDown_Y;
