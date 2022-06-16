@@ -59,7 +59,7 @@ namespace Ampel_Einrichtung
             }
             else
             {
-                port = new SerialPort(comboBox_Ports.GetItemText(comboBox_Ports.SelectedItem), 9600, Parity.None, 8, StopBits.One);
+                port = new SerialPort(comboBox_Ports.GetItemText(comboBox_Ports.SelectedItem), 6900, Parity.None, 8, StopBits.One);
                 port.Open();
                 if (port.IsOpen)
                 {
